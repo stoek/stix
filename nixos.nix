@@ -35,7 +35,9 @@
   # };
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
+  services.xserver.desktopManager.pantheon.enable = true;
+
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -67,6 +69,7 @@
       vim
       openvpn
       gobuster
+      jdk11
     ];
   };
 
@@ -78,6 +81,7 @@
     git
     cifs-utils
     zsh
+    burpsuitepro
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -94,6 +98,8 @@
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+  nixpkgs.config.allowUnfree = true;
+
 
   # List services that you want to enable:
 
