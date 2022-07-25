@@ -6,16 +6,16 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     vscode-server.url = "github:msteen/nixos-vscode-server";
-   # stixoverlay.url = "github:stoek/stixoverlay";
+    stixoverlay.url = "github:stoek/stixoverlay";
 
   };
   
-  outputs = inputs@{ nixpkgs, home-manager, vscode-server, ... }: { ß#let
+  outputs = inputs@{ nixpkgs, home-manager, vscode-server, ... }: let
     # Overlays is the list of overlays we want to apply from flake inputs.
-   # overlays = [
-    #  inputs.stixoverlay.overlay
-   # ];
-    #in {
+    overlays = [
+      inputs.stixoverlay.overlay
+    ];
+    in {
     nixosConfigurations = {
       inherit overlays;
       sepiol = nixpkgs.lib.nixosSystem {
