@@ -35,8 +35,8 @@
   # };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.enable = true;
+  # services.xserver.desktopManager.pantheon.enable = true;
 
 
   # Configure keymap in X11

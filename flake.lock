@@ -80,11 +80,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1658772106,
-        "narHash": "sha256-HO0TluG2PG+NHgP49uNnxxXpd/FpgjYKoOOX+6LlAJA=",
+        "lastModified": 1658773102,
+        "narHash": "sha256-F8bdllJynTlne2t1NjFemHfxjNKv7WoEGWnPmUSnx4k=",
         "owner": "stoek",
         "repo": "stixoverlay",
-        "rev": "42a1fc8a90b97a2d387163510caf6b1a93991709",
+        "rev": "283386944cf67f93564d328bc5aaefc0f1392017",
         "type": "github"
       },
       "original": {

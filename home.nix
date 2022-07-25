@@ -21,7 +21,7 @@
   home.packages = with pkgs; [
     htop
     exa
-    burpsuitepro
+    burp
   ];
 
 programs.zsh = {
