@@ -81,7 +81,6 @@
     git
     cifs-utils
     zsh
-    #burpsuitepro
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
