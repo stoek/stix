@@ -126,7 +126,11 @@
   # the needed ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 445 139 ];
   networking.firewall.allowedUDPPorts = [ 137 138 ];
-  
+  networking.extraHosts =
+    ''
+      10.10.11.156 late.htb
+      10.0.0.1 server
+    ''; 
   
   
   # mDNS

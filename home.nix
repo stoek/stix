@@ -22,6 +22,10 @@
     htop
     exa
     burp
+    openvpn
+    nmap
+    crackmapexec
+    # python310Packages.pypykatz
   ];
 
 programs.zsh = {
@@ -35,6 +39,7 @@ programs.zsh = {
     cl = "clear";
     norb = "sudo nixos-rebuild switch --flake /home/stan/.stix";
     nogb = "sudo nix-collect-garbage";
+    nsn = "echo $NSNAME";
   };
   history = {
     size = 10000;
@@ -50,10 +55,15 @@ programs.zsh = {
   initExtra = ''
     setprompt() {
     setopt prompt_subst
-
-    PROMPT='%T %~
+    if [[ -v IN_NIX_SHELL ]]; then
+        PROMPT='%T %~
+    %F{yellow}% $(nsn) %F{red}%\:%F{green}%\:%F{blue}%\:%F{magenta}%\:%f '
+    else 
+        PROMPT='%T %~
     %F{red}%\:%F{green}%\:%F{yellow}%\:%F{blue}%\:%F{magenta}%\:%f '
+    fi
     }
+    
     setprompt
   '';
 };

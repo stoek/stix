@@ -7,13 +7,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     vscode-server.url = "github:msteen/nixos-vscode-server";
     stixoverlay.url = "github:stoek/stixoverlay";
-
+    cme.url = "github:Porchetta-Industries/CrackMapExec";
   };
   
   outputs = inputs@{ nixpkgs, home-manager, vscode-server, ... }: let
     # Overlays is the list of overlays we want to apply from flake inputs.
     overlays = [
       inputs.stixoverlay.overlay
+      inputs.cme.overlay
     ];
     in {
     nixosConfigurations = {
