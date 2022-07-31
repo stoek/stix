@@ -18,15 +18,16 @@
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
 
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
+
   home.packages = with pkgs; [
     htop
     exa
-    burp
     openvpn
-    nmap
-    crackmapexec
-    # python310Packages.pypykatz
   ];
+
 
 programs.zsh = {
   enable = true;
@@ -65,6 +66,9 @@ programs.zsh = {
     }
     
     setprompt
+    eval "$(direnv hook zsh)"
+    export DIRENV_LOG_FORMAT=
+    chpwd_functions+=(setprompt)
   '';
 };
 
