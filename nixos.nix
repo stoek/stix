@@ -115,7 +115,7 @@
 
     shares = {
     sepiol = {
-     path = "/home/stan/shared";
+     path = "/home/stan/.stix";
         browseable = "yes";
        "read only" = "no";
        "guest ok" = "no";
