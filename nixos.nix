@@ -13,6 +13,9 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
+  hardware.parallels.enable = true;
 
   networking.hostName = "sepiol"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -36,7 +39,9 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  # services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.displayManager.ssdm.enable = true;
+  # services.xserver.displayManager.ssdm.defaultSession = "none+awesome";
+  # windowManager.awesome.enable = true;
 
 
   # Configure keymap in X11
@@ -68,6 +73,9 @@
     packages = with pkgs; [
       vim
       openvpn
+      papirus-icon-theme
+      firefox
+      gnome.gnome-tweaks
       gobuster
       jdk11
     ];
@@ -101,67 +109,6 @@
 
 
   # List services that you want to enable:
-
-  services.samba = {
-    enable = true;
-    
-     # $ sudo smbpasswd -a yourusername
-
-     # This adds to the [global] section:
-    extraConfig = ''
-      browseable = yes
-      smb encrypt = required
-    '';
-
-    shares = {
-    sepiol = {
-     path = "/home/stan/.stix";
-        browseable = "yes";
-       "read only" = "no";
-       "guest ok" = "no";
-      };
-    };
-  };
-  # Curiously, `services.samba` does not automatically open
-  # the needed ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 445 139 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 ];
-  networking.extraHosts =
-    ''
-      10.10.11.156 late.htb
-      10.0.0.1 server
-    ''; 
-  
-  
-  # mDNS
-  
-  # This part may be optional for your needs, but I find it makes browsing in Dolphin easier,
-  # and it makes connecting from a local Mac possible.
- services.avahi = {
-   enable = true;
-   nssmdns = true;
-   publish = {
-     enable = true;
-     addresses = true;
-     domain = true;
-     hinfo = true;
-     userServices = true;
-     workstation = true;
-   };
-   extraServiceFiles = {
-     smb = ''
-       <?xml version="1.0" standalone='no'?><!--*-nxml-*-->
-       <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
-       <service-group>
-         <name replace-wildcards="yes">%h</name>
-         <service>
-           <type>_smb._tcp</type>
-           <port>445</port>
-         </service>
-       </service-group>
-     '';
-   };
- };
 
 
   # Enable the OpenSSH daemon.

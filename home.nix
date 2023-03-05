@@ -26,8 +26,10 @@
     htop
     exa
     openvpn
+    neovim
   ];
 
+programs.neovim.extraConfig = lib.fileContents ./config/nvim/init.vim;
 
 programs.zsh = {
   enable = true;
