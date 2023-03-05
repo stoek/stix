@@ -84,7 +84,7 @@ programs.zsh = {
 
  home.file = {
     "awesome" = {
-      source = ./awesome;
+      source = ./configs/awesome;
       target = "./.config/awesome";
     };
   };
