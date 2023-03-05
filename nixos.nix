@@ -38,10 +38,10 @@
   # };
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  # services.xserver.displayManager.ssdm.enable = true;
-  # services.xserver.displayManager.ssdm.defaultSession = "none+awesome";
-  # windowManager.awesome.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.defaultSession = "none+awesome";
+  services.xserver.windowManager.awesome.enable = true;
 
 
   # Configure keymap in X11

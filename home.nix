@@ -82,4 +82,11 @@ programs.zsh = {
   '';
 };
 
+ home.file = {
+    "awesome" = {
+      source = ./awesome;
+      target = "./.config/awesome";
+    };
+  };
+
 }
