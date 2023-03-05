@@ -31,10 +31,13 @@
     htop
     exa
     openvpn
-    neovim
+  # rust
+    rustc
+    cargo
+    rustfmt
+    rust-analyzer
+    clippy
   ];
-
-programs.neovim.extraConfig = lib.fileContents ./config/nvim/init.vim;
 
 programs.zsh = {
   enable = true;

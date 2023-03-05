@@ -308,8 +308,8 @@ require('lualine').setup {
 }
 require('lsp-setup').setup({
   servers = {
-      gopls = {},
-      rust_analyzer = {}
+      --gopls = {},
+      --rust_analyzer = {}
 }
 })
 

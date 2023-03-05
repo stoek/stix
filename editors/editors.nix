@@ -10,7 +10,7 @@
          ''
            # ${builtins.readFile ./init.vim }
            lua << EOF
-           ${builtins.readFile ./init.lua}
+           ${builtins.readFile ./main.lua}
          '';
        # plugins = with pkgs.vimPlugins; [
        #   vim-addon-nix

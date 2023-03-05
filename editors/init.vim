@@ -14,4 +14,3 @@ set termguicolors
 command GI %! goimports
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
-set cmdheight=0
