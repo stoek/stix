@@ -4,13 +4,13 @@
   programs = {
     # neovim
     neovim = {
-      enable = false;
+      enable = true;
        # package = pkgs.neovim-nightly;
        extraConfig =
          ''
-           # ${builtins.readFile ../config/nvim/init.vim }
+           # ${builtins.readFile ./init.vim }
            lua << EOF
-           ${builtins.readFile ../../config/nvim/init.lua}
+           ${builtins.readFile ./init.lua}
          '';
        # plugins = with pkgs.vimPlugins; [
        #   vim-addon-nix
@@ -44,10 +44,6 @@
 	gopls
 	rust-analyzer
       ];
-    };
-
-    nano={
-      enable=true;
     };
 
   };
