@@ -15,6 +15,11 @@
   # changes in each release.
   home.stateVersion = "22.05";
 
+  imports = [
+    ./editors/editors.nix
+  ];
+
+
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
 
